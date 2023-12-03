@@ -1,0 +1,30 @@
+{
+  "db_pool": {
+    "host": "127.0.0.1",
+    "user": "root",
+    "password": "",
+    "database": "foodprint"
+  },
+  "development": {
+    "username": "root",
+    "password": "",
+    "database": "foodprint",
+    "host": "127.0.0.1",
+    "port": 3307,
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "",
+    "database": "foodprint",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "",
+    "database": "foodprint",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

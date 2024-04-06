@@ -1,5 +1,5 @@
-CREATE DATABASE  IF NOT EXISTS `foodprint` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `foodprint`;
+-- CREATE DATABASE  IF NOT EXISTS `foodprint` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE foodprint;
 -- MySQL dump 10.13  Distrib 8.0.22, for macos10.15 (x86_64)
 --
 -- Host: localhost    Database: foodprint
@@ -21,17 +21,17 @@ USE `foodprint`;
 -- Table structure for table `foodprint_config`
 --
 
-DROP TABLE IF EXISTS `foodprint_config`;
+DROP TABLE IF EXISTS foodprint_config;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `foodprint_config` (
-  `pk` int NOT NULL AUTO_INCREMENT,
-  `configid` varchar(255) DEFAULT NULL,
-  `configname` varchar(255) DEFAULT NULL,
-  `configdescription` varchar(255) DEFAULT NULL,
-  `configvalue` varchar(255) DEFAULT NULL,
-  `logdatetime` datetime DEFAULT NULL,
-  PRIMARY KEY (`pk`)
+CREATE TABLE foodprint_config(
+  pk int NOT NULL AUTO_INCREMENT,
+  configid varchar(255) DEFAULT NULL,
+  configname varchar(255) DEFAULT NULL,
+  configdescription varchar(255) DEFAULT NULL,
+  configvalue varchar(255) DEFAULT NULL,
+  logdatetime datetime DEFAULT NULL,
+  PRIMARY KEY (pk)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -39,26 +39,26 @@ CREATE TABLE `foodprint_config` (
 -- Table structure for table `foodprint_farm`
 --
 
-DROP TABLE IF EXISTS `foodprint_farm`;
+DROP TABLE IF EXISTS foodprint_farm;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `foodprint_farm` (
-  `pk` int NOT NULL AUTO_INCREMENT,
-  `farmid` varchar(255) DEFAULT NULL,
-  `farmname` varchar(255) DEFAULT NULL,
-  `farmdescription` varchar(750) DEFAULT NULL,
-  `farmcode` varchar(255) DEFAULT NULL,
-  `farmemail` varchar(255) DEFAULT NULL,
-  `farmphone` varchar(255) DEFAULT NULL,
-  `farmcell` varchar(255) DEFAULT NULL,
-  `farmlongitude` varchar(255) DEFAULT NULL,
-  `farmlatitude` varchar(255) DEFAULT NULL,
-  `farmaddress` varchar(255) DEFAULT NULL,
-  `farmcity` varchar(255) DEFAULT NULL,
-  `farmcountry` varchar(255) DEFAULT NULL,
-  `farmtimes` varchar(255) DEFAULT NULL,
-  `logdatetime` datetime DEFAULT NULL,
-  PRIMARY KEY (`pk`)
+CREATE TABLE foodprint_farm (
+  pk int NOT NULL AUTO_INCREMENT,
+  farmid varchar(255) DEFAULT NULL,
+  farmname varchar(255) DEFAULT NULL,
+  farmdescription varchar(750) DEFAULT NULL,
+  farmcode varchar(255) DEFAULT NULL,
+  farmemail varchar(255) DEFAULT NULL,
+  farmphone varchar(255) DEFAULT NULL,
+  farmcell varchar(255) DEFAULT NULL,
+  farmlongitude varchar(255) DEFAULT NULL,
+  farmlatitude varchar(255) DEFAULT NULL,
+  farmaddress varchar(255) DEFAULT NULL,
+  farmcity varchar(255) DEFAULT NULL,
+  farmcountry varchar(255) DEFAULT NULL,
+  farmtimes varchar(255) DEFAULT NULL,
+  logdatetime datetime DEFAULT NULL,
+  PRIMARY KEY (pk)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -66,18 +66,18 @@ CREATE TABLE `foodprint_farm` (
 -- Table structure for table `foodprint_farmproduce`
 --
 
-DROP TABLE IF EXISTS `foodprint_farmproduce`;
+DROP TABLE IF EXISTS foodprint_farmproduce;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `foodprint_farmproduce` (
-  `pk` int NOT NULL AUTO_INCREMENT,
-  `produceid` varchar(255) DEFAULT NULL,
-  `producename` varchar(255) DEFAULT NULL,
-  `producedescription` varchar(255) DEFAULT NULL,
-  `producepicture` varchar(255) DEFAULT NULL,
-  `farmid` varchar(255) DEFAULT NULL,
-  `logdatetime` datetime DEFAULT NULL,
-  PRIMARY KEY (`pk`)
+CREATE TABLE foodprint_farmproduce (
+  pk int NOT NULL AUTO_INCREMENT,
+  produceid varchar(255) DEFAULT NULL,
+  producename varchar(255) DEFAULT NULL,
+  producedescription varchar(255) DEFAULT NULL,
+  producepicture varchar(255) DEFAULT NULL,
+  farmid varchar(255) DEFAULT NULL,
+  logdatetime datetime DEFAULT NULL,
+  PRIMARY KEY (pk)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -85,15 +85,15 @@ CREATE TABLE `foodprint_farmproduce` (
 -- Table structure for table `foodprint_farmuser`
 --
 
-DROP TABLE IF EXISTS `foodprint_farmuser`;
+DROP TABLE IF EXISTS foodprint_farmuser;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `foodprint_farmuser` (
-  `pk` int NOT NULL AUTO_INCREMENT,
-  `farmid` varchar(255) DEFAULT NULL,
-  `userid` varchar(255) DEFAULT NULL,
-  `logdatetime` datetime DEFAULT NULL,
-  PRIMARY KEY (`pk`)
+CREATE TABLE foodprint_farmuser (
+  pk int NOT NULL AUTO_INCREMENT,
+  farmid varchar(255) DEFAULT NULL,
+  userid varchar(255) DEFAULT NULL,
+  logdatetime datetime DEFAULT NULL,
+  PRIMARY KEY (pk)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -101,38 +101,38 @@ CREATE TABLE `foodprint_farmuser` (
 -- Table structure for table `foodprint_harvest`
 --
 
-DROP TABLE IF EXISTS `foodprint_harvest`;
+DROP TABLE IF EXISTS foodprint_harvest;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `foodprint_harvest` (
-  `pk` int NOT NULL AUTO_INCREMENT,
-  `harvest_logid` varchar(255) DEFAULT NULL,
-  `harvest_supplierShortcode` varchar(255) DEFAULT NULL,
-  `harvest_supplierName` varchar(255) DEFAULT NULL,
-  `harvest_farmerName` varchar(255) DEFAULT NULL,
-  `harvest_supplierAddress` varchar(255) DEFAULT NULL,
-  `harvest_produceName` varchar(255) DEFAULT NULL,
-  `harvest_photoHash` longblob,
-  `harvest_TimeStamp` datetime DEFAULT NULL,
-  `harvest_CaptureTime` datetime DEFAULT NULL,
-  `harvest_Description` varchar(1000) DEFAULT NULL,
-  `harvest_geolocation` varchar(255) DEFAULT NULL,
-  `harvest_quantity` varchar(255) DEFAULT NULL,
-  `harvest_unitOfMeasure` varchar(255) DEFAULT NULL,
-  `harvest_description_json` varchar(1000) DEFAULT NULL,
-  `harvest_BlockchainHashID` varchar(255) DEFAULT NULL,
-  `harvest_BlockchainHashData` varchar(2000) DEFAULT NULL,
-  `supplierproduce` varchar(255) DEFAULT NULL,
-  `harvest_bool_added_to_blockchain` varchar(255) DEFAULT NULL,
-  `harvest_added_to_blockchain_date` datetime DEFAULT NULL,
-  `harvest_added_to_blockchain_by` varchar(255) DEFAULT NULL,
-  `harvest_blockchain_uuid` varchar(255) DEFAULT NULL,
-  `harvest_user` varchar(255) DEFAULT NULL,
-  `logdatetime` datetime DEFAULT NULL,
-  `lastmodifieddatetime` datetime DEFAULT NULL,
-  `year_established` varchar(255) DEFAULT NULL,
-  `covid19_response` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`pk`)
+CREATE TABLE foodprint_harvest (
+  pk int NOT NULL AUTO_INCREMENT,
+  harvest_logid varchar(255) DEFAULT NULL,
+  harvest_supplierShortcode varchar(255) DEFAULT NULL,
+  harvest_supplierName varchar(255) DEFAULT NULL,
+  harvest_farmerName varchar(255) DEFAULT NULL,
+  harvest_supplierAddress varchar(255) DEFAULT NULL,
+  harvest_produceName varchar(255) DEFAULT NULL,
+  harvest_photoHash longblob,
+  harvest_TimeStamp datetime DEFAULT NULL,
+  harvest_CaptureTime datetime DEFAULT NULL,
+  harvest_Description varchar(1000) DEFAULT NULL,
+  harvest_geolocation varchar(255) DEFAULT NULL,
+  harvest_quantity varchar(255) DEFAULT NULL,
+  harvest_unitOfMeasure varchar(255) DEFAULT NULL,
+  harvest_description_json varchar(1000) DEFAULT NULL,
+  harvest_BlockchainHashID varchar(255) DEFAULT NULL,
+  harvest_BlockchainHashData varchar(2000) DEFAULT NULL,
+  supplierproduce varchar(255) DEFAULT NULL,
+  harvest_bool_added_to_blockchain varchar(255) DEFAULT NULL,
+  harvest_added_to_blockchain_date datetime DEFAULT NULL,
+  harvest_added_to_blockchain_by varchar(255) DEFAULT NULL,
+  harvest_blockchain_uuid varchar(255) DEFAULT NULL,
+  harvest_user varchar(255) DEFAULT NULL,
+  logdatetime datetime DEFAULT NULL,
+  lastmodifieddatetime datetime DEFAULT NULL,
+  year_established varchar(255) DEFAULT NULL,
+  covid19_response varchar(255) DEFAULT NULL,
+  PRIMARY KEY (pk)
 ) ENGINE=InnoDB AUTO_INCREMENT=333 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -140,10 +140,10 @@ CREATE TABLE `foodprint_harvest` (
 -- Table structure for table `foodprint_market`
 --
 
-DROP TABLE IF EXISTS `foodprint_market`;
+DROP TABLE IF EXISTS foodprint_market;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `foodprint_market` (
+CREATE TABLE foodprint_market (
   `pk` int NOT NULL AUTO_INCREMENT,
   `marketid` varchar(255) DEFAULT NULL,
   `marketname` varchar(255) DEFAULT NULL,
@@ -492,8 +492,8 @@ CREATE TABLE `user` (
   `role` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   `createdAt` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  `registrationChannel` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
+  registrationChannel varchar(255) DEFAULT NULL,
+  PRIMARY KEY (ID)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 SHOW DATABASES
